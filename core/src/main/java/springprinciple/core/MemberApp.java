@@ -1,0 +1,19 @@
+package springprinciple.core;
+
+import springprinciple.core.member.Grade;
+import springprinciple.core.member.Member;
+import springprinciple.core.member.MemberService;
+import springprinciple.core.member.MemberServiceImpl;
+
+public class MemberApp {
+
+    public static void main(String[] args) {
+        MemberService memberService = new MemberServiceImpl();
+        Member member = new Member(1L, "winterA", Grade.VIP);
+        memberService.join(member);
+
+        Member findMember = memberService.findMember(1L);
+        System.out.println("new mem: " + member.getName());
+        System.out.println("find mem: " + findMember.getName());
+    }
+}
