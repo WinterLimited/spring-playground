@@ -1,5 +1,6 @@
 package hello.servlet.domain.member;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -18,10 +19,7 @@ public class MemberRepository {
         return instance;
     }
 
-
-    // 생성자로 외부에서 생성하지 못하도록 private으로 막아둠
     private MemberRepository() {
-
     }
 
     public Member save(Member member) {
@@ -35,10 +33,11 @@ public class MemberRepository {
     }
 
     public List<Member> findAll() {
-        return List.copyOf(store.values());
+        return new ArrayList<>(store.values());
     }
 
     public void clearStore() {
         store.clear();
     }
+
 }
