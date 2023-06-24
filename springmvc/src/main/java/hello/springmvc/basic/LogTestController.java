@@ -1,4 +1,4 @@
-package hello.springmvc;
+package hello.springmvc.basic;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
